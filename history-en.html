@@ -25,10 +25,12 @@
 <ul>
 <li>Playback: resuming after switching scores no longer plays the previous score; a single playback instance (fixes the real-device &quot;two sounds at once&quot;)</li>
 <li>Engraving: beams no longer overlap noteheads, beam groups are split at a 2-octave pitch span (no more crossed stems), and a mid-measure time signature reserves space by its <strong>measured glyph width</strong></li>
+<li>Engraving: a batch of <strong>wrong music-font code points</strong> was fixed (checked against the official SMuFL glyph-name table) — Segno / D.S. / D.C. drew the wrong mark (Segno showed D.C.), tempo marks showed the wrong note value (<code>♩ = 120</code> was drawn as a whole note), the pedal release mark and the &quot;✱&quot; mark, swapped staccato / tenuto icons, the arpeggio wiggle, and the 15mb/8va bass clefs; a new <code>Tools/FontGlyphCheck</code> guard prevents a recurrence</li>
+<li>Engraving: mordent glyphs settled against MuseScore 3.6.2 / 4.2.1 renders (<code>&lt;mordent&gt;</code> = with the vertical stroke, <code>&lt;inverted-mordent&gt;</code> = without), and the details panel&#x27;s Chinese &quot;上波音 / 下波音&quot; labels now match the glyph and the explanation</li>
 <li>MusicXML: Roman-numeral chords and inversions (<code>&lt;function&gt;</code>, with super/subscript figures) are parsed, displayed and exported; the exporter&#x27;s schema violations are cleared (<code>dacapo</code> attribute name, <code>&lt;measure-repeat&gt;</code> instead of the invalid <code>&lt;percent&gt;</code>, <code>notations</code> element order …); all six scores now round-trip byte-identically on the first pass</li>
 <li>Terminology aligned with MuseScore&#x27;s Chinese wording («和弦记号» …), English added for the Shortcuts intents</li>
 <li>The sound bank is now a compressed <code>.sf3</code> (≈14 MB, decoded locally on first launch): the download drops from ≈134 MB to ≈13 MB</li>
-<li>Experimental features are labelled as such (jianpu, coverage score)</li>
+<li>Experimental features are labelled as such (jianpu, coverage score); the repeats score was redesigned into four single-theme scores (repeats &amp; endings / measure &amp; beat repeats / D.S. &amp; Coda / D.C. &amp; Fine)</li>
 <li>Requires iOS 16.0+, iPhone / iPad</li>
 </ul>
 <h2>1.0 build 8 (previous production)</h2>

@@ -25,10 +25,12 @@
 <ul>
 <li>播放：换谱后「继续播放」不再接着放旧谱；播放实例唯一（真机实测的&quot;点播放出现两个声音&quot;已修）</li>
 <li>渲染：符杠不再压符头、连谱组按 2 个八度跨度上限断开（&quot;X 交错&quot;消失）、换拍号处按<strong>实测字形宽</strong>留位</li>
+<li>渲染：修掉一批<strong>字形码位错位</strong>（按官方 SMuFL 字形名表全量核对）—— Segno / D.S. / D.C. 画错 （Segno 曾画成 D.C.）、速度记号音符时值画错（<code>♩=120</code> 曾画成全音符）、踏板释放记号、&quot;✱&quot; 画成人声符号、 跳音/保持音图标互换、琶音波浪线、低音谱号 15mb/8va；新增 <code>Tools/FontGlyphCheck</code> 自检防复发</li>
+<li>渲染：波音字形按 MuseScore 3.6.2 / 4.2.1 渲染图定案（<code>&lt;mordent&gt;</code>=带竖线、<code>&lt;inverted-mordent&gt;</code>=不带竖线）， 详情面板「上波音 / 下波音」中文标签与字形/说明对齐</li>
 <li>MusicXML：新增<strong>罗马数字和弦/转位</strong>（<code>&lt;function&gt;</code>，含上/下标数字）解析·显示·导出；导出端 XSD 违规清零 （<code>dacapo</code> 属性名、<code>&lt;measure-repeat&gt;</code> 取代非法的 <code>&lt;percent&gt;</code>、<code>notations</code> 元素次序…）；六份谱首轮往返逐字节幂等</li>
 <li>记号术语按 MuseScore 中文口径统一（「和弦记号」等），快捷指令文案补英文</li>
 <li>音色库改为压缩 <code>.sf3</code>（≈14 MB，首启本地解码）→ 安装包从 ≈134 MB 降到 ≈13 MB</li>
-<li>简谱（实验）、覆盖谱（实验）等实验功能的标注</li>
+<li>简谱（实验）、覆盖谱（实验）等实验功能的标注；反复谱重做为 4 份单一主题的谱（反复与结尾 / 小节·拍重复 / D.S.·Coda / D.C.·Fine）</li>
 <li>要求 iOS 16.0+，iPhone / iPad</li>
 </ul>
 <h2>1.0 build 8（原生产版本）</h2>
