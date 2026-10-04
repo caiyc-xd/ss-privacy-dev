@@ -20,28 +20,35 @@
   </nav>
 </header>
 <main>
+<p class="muted">Jump to:<a href="#v1-1">1.1</a> · <a href="#v1-0">1.0</a></p>
 <h1>Version history</h1>
-<h2>1.1 build 1 (upcoming · in development)</h2>
+<h2 id="v1-1">1.1 (in development)</h2>
 <ul>
-<li>Playback: resuming after switching scores no longer plays the previous score; a single playback instance (fixes the real-device &quot;two sounds at once&quot;)</li>
-<li>Engraving: beams no longer overlap noteheads, beam groups are split at a 2-octave pitch span (no more crossed stems), and a mid-measure time signature reserves space by its <strong>measured glyph width</strong></li>
-<li>Engraving: a batch of <strong>wrong music-font code points</strong> was fixed (checked against the official SMuFL glyph-name table) — Segno / D.S. / D.C. drew the wrong mark (Segno showed D.C.), tempo marks showed the wrong note value (<code>♩ = 120</code> was drawn as a whole note), the pedal release mark and the &quot;✱&quot; mark, swapped staccato / tenuto icons, the arpeggio wiggle, and the 15mb/8va bass clefs; a new <code>Tools/FontGlyphCheck</code> guard prevents a recurrence</li>
-<li>Engraving: mordent glyphs settled against MuseScore 3.6.2 / 4.2.1 renders (<code>&lt;mordent&gt;</code> = with the vertical stroke, <code>&lt;inverted-mordent&gt;</code> = without), and the details panel&#x27;s Chinese &quot;上波音 / 下波音&quot; labels now match the glyph and the explanation</li>
-<li>MusicXML: Roman-numeral chords and inversions (<code>&lt;function&gt;</code>, with super/subscript figures) are parsed, displayed and exported; the exporter&#x27;s schema violations are cleared (<code>dacapo</code> attribute name, <code>&lt;measure-repeat&gt;</code> instead of the invalid <code>&lt;percent&gt;</code>, <code>notations</code> element order …); all six scores now round-trip byte-identically on the first pass</li>
-<li>Terminology aligned with MuseScore&#x27;s Chinese wording («和弦记号» …), English added for the Shortcuts intents</li>
-<li>The sound bank is now a compressed <code>.sf3</code> (≈14 MB, decoded locally on first launch): the download drops from ≈134 MB to ≈13 MB</li>
-<li>Experimental features are labelled as such (jianpu, coverage score); the repeats score was redesigned into four single-theme scores (repeats &amp; endings / measure &amp; beat repeats / D.S. &amp; Coda / D.C. &amp; Fine)</li>
+<li><strong>Playback</strong>: fixed &quot;pressing Resume after Pause started from the beginning again&quot;; resuming after switching scores no longer plays the previous score; only one playback instance at a time</li>
+<li><strong>Engraving</strong>: beams no longer overlap noteheads; beam groups split at a 2-octave pitch span (no more crossed stems); a mid-measure time signature reserves space by its <strong>measured glyph width</strong>; fixed a batch of <strong>wrong music-font glyphs</strong> (Segno / D.S. / D.C. drew other marks, tempo marks showed the wrong note value, the pedal release mark, swapped staccato / tenuto icons, the arpeggio wiggle and the 15mb/8va bass clefs)</li>
+<li><strong>Mordents</strong>: glyphs settled against MuseScore renders (<code>&lt;mordent&gt;</code> has the vertical stroke, <code>&lt;inverted-mordent&gt;</code> does not) and the details panel&#x27;s Chinese labels now match the glyph and the explanation</li>
+<li><strong>MusicXML</strong>: Roman-numeral chords and inversions (<code>&lt;function&gt;</code>, with super/subscript figures) are parsed, displayed and exported; exported files no longer violate the schema; hidden notes (<code>print-object=&quot;no&quot;</code>), <code>&lt;other-dynamics&gt;</code>, tuplet <code>&lt;normal-type&gt;</code> and open-string notation are handled; <strong>a crescendo that spans measures no longer loses its endpoint</strong></li>
+<li><strong>Demo score</strong>: the bundled “Demo March” now carries staccato, accents, tenuto, slurs, ties, a mordent, a triplet, a crescendo and a fermata, so “Note details → Music classroom” has something to explain</li>
+<li><strong>Practice</strong>: the repeats score was redesigned into four single-theme scores (repeats &amp; endings / measure &amp; beat repeats / D.S. &amp; Coda / D.C. &amp; Fine)</li>
+<li><strong>Terminology</strong>: aligned with MuseScore&#x27;s Chinese wording; “coverage score” replaces the old name; English added for the Shortcuts intents</li>
+<li><strong>Download size</strong>: the sound bank is now a compressed <code>.sf3</code> decoded locally on first launch — the download drops from about 134 MB to about 13 MB</li>
+<li>Jianpu and the coverage score are labelled <strong>experimental</strong></li>
 <li>Requires iOS 16.0+, iPhone / iPad</li>
 </ul>
-<h2>1.0 build 8 (previous production)</h2>
+<h2 id="v1-0">1.0 (current release)</h2>
 <ul>
-<li>First public release: open MusicXML (.xml/.musicxml/.mxl) and vector PDFs, Bravura engraving, a bundled GM sound bank for offline playback, transport (return to start / pause &amp; resume / play from the selected note), note details + music classroom, metronome / tempo / loop / swing, scale practice and a piano roll, export to PDF / PNG / MIDI / WAV / MusicXML, Chinese and English, fully offline</li>
-<li>The bundled GM sound bank was the uncompressed <code>.sf2</code> (≈148 MB), which is why the download was large</li>
-<li>Build history: build 6 was submitted and withdrawn; builds 7 / 8 were archived but never uploaded</li>
+<li>Open and play instantly: MusicXML (<code>.xml</code>, <code>.musicxml</code>, <code>.mxl</code>) and vector PDFs exported by notation software</li>
+<li>Bravura engraving: noteheads, stems, beams, slurs, ornaments, chord symbols, repeats and multi-voice rests</li>
+<li>Offline playback with a bundled GM sound bank: dynamics, pedals, staccato, fermatas, trills / turns / mordents and grace notes are performed as written</li>
+<li>Transport: return to start, play / pause / resume, and play from a selected note</li>
+<li>Note details and the “Music classroom”: pitch, duration, voice and staff, articulations, dynamics, lyrics and chord symbols</li>
+<li>Repeats and jumps: repeat barlines, voltas, D.C. / D.S. al Fine, To Coda</li>
+<li>Practice: scales, arpeggios and chords in C / F / G and their relative minors, plus metronome, tempo, loop, swing and a piano roll</li>
+<li>Export to PDF / PNG / MIDI / WAV / MusicXML; Chinese and English; fully offline — no account, no ads, no purchases</li>
 </ul>
 </main>
 <footer class="site">
-  <p>© 2026 ScoreStudio · <a href="mailto:caiyc_xd@126.com">caiyc_xd@126.com</a><br>Friendly link: <a href="https://caiyc-xd.github.io/openscores/" rel="noopener">openscores — public-domain score library</a> (independent open-source project, CC0 scores / MIT code)</p>
+  <p>© 2026 ScoreStudio · <a href="mailto:caiyc_xd@126.com">caiyc_xd@126.com</a><br>Friendly link: <a href="https://caiyc-xd.github.io/openscores/" rel="noopener">openscores — public-domain score library</a> (independent open-source project, CC0 scores / MIT code)<br>Version: <a href="history-en.html">version history</a></p>
   <p class="muted">Runs entirely offline. Collects no data.</p>
 </footer>
 </body>

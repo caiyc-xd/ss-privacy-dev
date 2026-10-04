@@ -20,28 +20,35 @@
   </nav>
 </header>
 <main>
+<p class="muted">跳到：<a href="#v1-1">1.1</a> · <a href="#v1-0">1.0</a></p>
 <h1>版本历史</h1>
-<h2>1.1 build 1（待发布 · 开发中）</h2>
+<h2 id="v1-1">1.1（开发中）</h2>
 <ul>
-<li>播放：换谱后「继续播放」不再接着放旧谱；播放实例唯一（真机实测的&quot;点播放出现两个声音&quot;已修）</li>
-<li>渲染：符杠不再压符头、连谱组按 2 个八度跨度上限断开（&quot;X 交错&quot;消失）、换拍号处按<strong>实测字形宽</strong>留位</li>
-<li>渲染：修掉一批<strong>字形码位错位</strong>（按官方 SMuFL 字形名表全量核对）—— Segno / D.S. / D.C. 画错 （Segno 曾画成 D.C.）、速度记号音符时值画错（<code>♩=120</code> 曾画成全音符）、踏板释放记号、&quot;✱&quot; 画成人声符号、 跳音/保持音图标互换、琶音波浪线、低音谱号 15mb/8va；新增 <code>Tools/FontGlyphCheck</code> 自检防复发</li>
-<li>渲染：波音字形按 MuseScore 3.6.2 / 4.2.1 渲染图定案（<code>&lt;mordent&gt;</code>=带竖线、<code>&lt;inverted-mordent&gt;</code>=不带竖线）， 详情面板「上波音 / 下波音」中文标签与字形/说明对齐</li>
-<li>MusicXML：新增<strong>罗马数字和弦/转位</strong>（<code>&lt;function&gt;</code>，含上/下标数字）解析·显示·导出；导出端 XSD 违规清零 （<code>dacapo</code> 属性名、<code>&lt;measure-repeat&gt;</code> 取代非法的 <code>&lt;percent&gt;</code>、<code>notations</code> 元素次序…）；六份谱首轮往返逐字节幂等</li>
-<li>记号术语按 MuseScore 中文口径统一（「和弦记号」等），快捷指令文案补英文</li>
-<li>音色库改为压缩 <code>.sf3</code>（≈14 MB，首启本地解码）→ 安装包从 ≈134 MB 降到 ≈13 MB</li>
-<li>简谱（实验）、覆盖谱（实验）等实验功能的标注；反复谱重做为 4 份单一主题的谱（反复与结尾 / 小节·拍重复 / D.S.·Coda / D.C.·Fine）</li>
-<li>要求 iOS 16.0+，iPhone / iPad</li>
+<li><strong>播放</strong>：修掉「暂停后按继续又从头开始」；换谱后「继续播放」不再接着放旧谱；同一时刻只有一个播放实例</li>
+<li><strong>排版</strong>：符杠不再压符头；连谱组按 2 个八度跨度上限断开（&quot;符干交叉&quot;消失）；换拍号处按<strong>实测字形宽</strong>留位； 修掉一批<strong>字形错位</strong>（Segno / D.S. / D.C. 画成别的记号、速度记号的音符时值画错、踏板释放记号、 跳音与保持音图标互换、琶音波浪线、低音谱号的 15mb/8va）</li>
+<li><strong>波音</strong>：按 MuseScore 的渲染对照确定字形（<code>&lt;mordent&gt;</code> 带竖线、<code>&lt;inverted-mordent&gt;</code> 不带竖线）， 详情面板的中文标签与字形、说明一致</li>
+<li><strong>MusicXML</strong>：新增罗马数字和弦与转位（<code>&lt;function&gt;</code>，含上/下标数字）的解析、显示与导出； 导出文件不再有格式违规；补齐隐藏音符（<code>print-object=&quot;no&quot;</code>）、<code>&lt;other-dynamics&gt;</code>、 连音比率的 <code>&lt;normal-type&gt;</code>、开弦记号等写法；<strong>跨小节渐强不再丢失终点</strong></li>
+<li><strong>示例谱</strong>：随包《示例进行曲》补上跳音、重音、保持音、连音线、同音连线、波音、三连音、渐强与延长记号， 打开就能在「音符详情 → 音乐课堂」里逐条看到讲解</li>
+<li><strong>练习</strong>：「反复谱」重做为四份单一主题的短谱（反复与结尾 / 小节·拍重复 / D.S.·Coda / D.C.·Fine）</li>
+<li><strong>术语与文案</strong>：按 MuseScore 中文口径统一（「和弦记号」等）；「覆盖谱」取代旧称；快捷指令文案补英文</li>
+<li><strong>安装包</strong>：音色库改为压缩 <code>.sf3</code>（首次启动在本地解码），下载体积从约 134 MB 降到约 13 MB</li>
+<li>简谱、覆盖谱标注为<strong>实验</strong>功能</li>
+<li>要求 iOS 16.0+，支持 iPhone / iPad</li>
 </ul>
-<h2>1.0 build 8（原生产版本）</h2>
+<h2 id="v1-0">1.0（当前发布版本）</h2>
 <ul>
-<li>首个对外版本：MusicXML（.xml/.musicxml/.mxl）与矢量 PDF 打开即看即听、Bravura 制谱排版、 内置 GM 音色库离线播放、走带（倒回起点 / 暂停续播 / 从选中音符起播）、音符详情 + 音乐课堂、 节拍器 / 变速 / 循环 / 摇摆、音阶练习与钢琴卷帘、导出 PDF / PNG / MIDI / WAV / MusicXML、中英双语、完全离线</li>
-<li>随包 GM 音色库为未压缩 <code>.sf2</code>（≈148 MB），因此安装包较大</li>
-<li>打包号历史：build 6 曾送审后撤回；build 7 / 8 归档但未上传（对外发布以 build 8 为准）</li>
+<li>打开即看即听：MusicXML（<code>.xml</code> / <code>.musicxml</code> / <code>.mxl</code>）与制谱软件导出的矢量 PDF</li>
+<li>Bravura 制谱排版：符头、符干、符杠、连音线、装饰音、和弦记号、反复记号与多声部休止符</li>
+<li>随包 GM 音色库离线播放：力度、踏板、跳音、延长记号、颤音 / 回音 / 波音与倚音按要求演奏</li>
+<li>走带：倒回起点、播放 / 暂停 / 继续、先点音符再播放即从该处起播</li>
+<li>音符详情与「音乐课堂」：音高、时值、声部与谱表、演奏法、力度、歌词与和弦记号</li>
+<li>反复与跳转：反复小节线、结尾（volta）、D.C. / D.S. al Fine、To Coda</li>
+<li>练琴：C / F / G 各调（含关系小调）的音阶、琶音与和弦练习，另有节拍器、变速、循环、摇摆与钢琴卷帘</li>
+<li>导出 PDF / PNG / MIDI / WAV / MusicXML；中英双语；完全离线、无账号、无广告、无内购</li>
 </ul>
 </main>
 <footer class="site">
-  <p>© 2026 乐谱学伴儿 · <a href="mailto:caiyc_xd@126.com">caiyc_xd@126.com</a><br>友情链接：<a href="https://caiyc-xd.github.io/openscores/" rel="noopener">openscores · 公开领域乐谱库</a>（独立开源项目，CC0 曲库 / MIT 代码）</p>
+  <p>© 2026 乐谱学伴儿 · <a href="mailto:caiyc_xd@126.com">caiyc_xd@126.com</a><br>友情链接：<a href="https://caiyc-xd.github.io/openscores/" rel="noopener">openscores · 公开领域乐谱库</a>（独立开源项目，CC0 曲库 / MIT 代码）<br>版本：<a href="history.html">版本历史与更新记录</a></p>
   <p class="muted">本应用完全离线运行，不收集任何数据。</p>
 </footer>
 </body>
