@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Version history · ScoreStudio</title>
+<meta name="description" content="ScoreStudio release history">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="support-en.html">ScoreStudio</a>
+  <nav>
+    <a href="product-en.html">Product</a>
+    <a href="support-en.html">Support</a>
+    <a href="history-en.html">Version history</a>
+    <a href="privacy-en.html">Privacy</a>
+    <a href="privacy.html">中文</a>
+  </nav>
+</header>
+<main>
+<h1>Version history</h1>
+<h2>1.1 build 1 (upcoming · in development)</h2>
+<ul>
+<li>Playback: resuming after switching scores no longer plays the previous score; a single playback instance</li>
+</ul>
+<p>  (fixes the real-device &quot;two sounds at once&quot;)</p>
+<ul>
+<li>Engraving: beams no longer overlap noteheads, beam groups are split at a 2-octave pitch span (no more</li>
+</ul>
+<p>  crossed stems), and a mid-measure time signature reserves space by its <strong>measured glyph width</strong></p>
+<ul>
+<li>MusicXML: Roman-numeral chords and inversions (<code>&lt;function&gt;</code>, with super/subscript figures) are parsed,</li>
+</ul>
+<p>  displayed and exported; the exporter&#x27;s schema violations are cleared (<code>dacapo</code> attribute name,</p>
+<p>  <code>&lt;measure-repeat&gt;</code> instead of the invalid <code>&lt;percent&gt;</code>, <code>notations</code> element order …); all six scores now</p>
+<p>  round-trip byte-identically on the first pass</p>
+<ul>
+<li>Terminology aligned with MuseScore&#x27;s Chinese wording («和弦记号» …), English added for the Shortcuts intents</li>
+<li>The sound bank is now a compressed <code>.sf3</code> (≈14 MB, decoded locally on first launch): the download drops</li>
+</ul>
+<p>  from ≈134 MB to ≈13 MB</p>
+<ul>
+<li>Experimental features are labelled as such (jianpu, coverage score)</li>
+<li>Requires iOS 16.0+, iPhone / iPad</li>
+</ul>
+<h2>1.0 build 8 (previous production)</h2>
+<ul>
+<li>First public release: open MusicXML (.xml/.musicxml/.mxl) and vector PDFs, Bravura engraving, a bundled GM</li>
+</ul>
+<p>  sound bank for offline playback, transport (return to start / pause &amp; resume / play from the selected note),</p>
+<p>  note details + music classroom, metronome / tempo / loop / swing, scale practice and a piano roll,</p>
+<p>  export to PDF / PNG / MIDI / WAV / MusicXML, Chinese and English, fully offline</p>
+<ul>
+<li>The bundled GM sound bank was the uncompressed <code>.sf2</code> (≈148 MB), which is why the download was large</li>
+<li>Build history: build 6 was submitted and withdrawn; builds 7 / 8 were archived but never uploaded</li>
+</ul>
+</main>
+<footer class="site">
+  <p>© 2026 ScoreStudio · <a href="mailto:caiyc_xd@126.com">caiyc_xd@126.com</a></p>
+  <p class="muted">Runs entirely offline. Collects no data.</p>
+</footer>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>版本历史 · 乐谱学伴儿</title>
+<meta name="description" content="乐谱学伴儿版本历史与发布记录">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="site">
+  <a class="brand" href="index.html">乐谱学伴儿 <span>ScoreStudio</span></a>
+  <nav>
+    <a href="product.html">产品</a>
+    <a href="index.html">支持</a>
+    <a href="history.html">版本历史</a>
+    <a href="privacy.html">隐私政策</a>
+    <a href="privacy-en.html">English</a>
+  </nav>
+</header>
+<main>
+<h1>版本历史</h1>
+<h2>1.1 build 1（待发布 · 开发中）</h2>
+<ul>
+<li>播放：换谱后「继续播放」不再接着放旧谱；播放实例唯一（真机实测的&quot;点播放出现两个声音&quot;已修）</li>
+<li>渲染：符杠不再压符头、连谱组按 2 个八度跨度上限断开（&quot;X 交错&quot;消失）、换拍号处按<strong>实测字形宽</strong>留位</li>
+<li>MusicXML：新增<strong>罗马数字和弦/转位</strong>（<code>&lt;function&gt;</code>，含上/下标数字）解析·显示·导出；导出端 XSD 违规清零</li>
+</ul>
+<p>  （<code>dacapo</code> 属性名、<code>&lt;measure-repeat&gt;</code> 取代非法的 <code>&lt;percent&gt;</code>、<code>notations</code> 元素次序…）；六份谱首轮往返逐字节幂等</p>
+<ul>
+<li>记号术语按 MuseScore 中文口径统一（「和弦记号」等），快捷指令文案补英文</li>
+<li>音色库改为压缩 <code>.sf3</code>（≈14 MB，首启本地解码）→ 安装包从 ≈134 MB 降到 ≈13 MB</li>
+<li>简谱（实验）、覆盖谱（实验）等实验功能的标注</li>
+<li>要求 iOS 16.0+，iPhone / iPad</li>
+</ul>
+<h2>1.0 build 8（原生产版本）</h2>
+<ul>
+<li>首个对外版本：MusicXML（.xml/.musicxml/.mxl）与矢量 PDF 打开即看即听、Bravura 制谱排版、</li>
+</ul>
+<p>  内置 GM 音色库离线播放、走带（倒回起点 / 暂停续播 / 从选中音符起播）、音符详情 + 音乐课堂、</p>
+<p>  节拍器 / 变速 / 循环 / 摇摆、音阶练习与钢琴卷帘、导出 PDF / PNG / MIDI / WAV / MusicXML、中英双语、完全离线</p>
+<ul>
+<li>随包 GM 音色库为未压缩 <code>.sf2</code>（≈148 MB），因此安装包较大</li>
+<li>打包号历史：build 6 曾送审后撤回；build 7 / 8 归档但未上传（对外发布以 build 8 为准）</li>
+</ul>
+</main>
+<footer class="site">
+  <p>© 2026 乐谱学伴儿 · <a href="mailto:caiyc_xd@126.com">caiyc_xd@126.com</a></p>
+  <p class="muted">本应用完全离线运行，不收集任何数据。</p>
+</footer>
+</body>
+</html>
