@@ -22,20 +22,31 @@
 <main>
 <p class="muted">跳到：<a href="#v1-1">1.1</a> · <a href="#v1-0">1.0</a></p>
 <h1>版本历史</h1>
-<h2 id="v1-1">1.1（开发中）</h2>
+<h2 id="v1-1">1.1（首次更新 · build 1）</h2>
 <ul>
-<li><strong>播放</strong>：修掉「暂停后按继续又从头开始」；换谱后「继续播放」不再接着放旧谱；同一时刻只有一个播放实例</li>
-<li><strong>排版</strong>：符杠不再压符头；连谱组按 2 个八度跨度上限断开（&quot;符干交叉&quot;消失）；换拍号处按<strong>实测字形宽</strong>留位； 修掉一批<strong>字形错位</strong>（Segno / D.S. / D.C. 画成别的记号、速度记号的音符时值画错、踏板释放记号、 跳音与保持音图标互换、琶音波浪线、低音谱号的 15mb/8va）</li>
-<li><strong>波音</strong>：按参照谱的渲染对照确定字形（<code>&lt;mordent&gt;</code> 带竖线、<code>&lt;inverted-mordent&gt;</code> 不带竖线）， 详情面板的中文标签与字形、说明一致</li>
-<li><strong>MusicXML</strong>：新增罗马数字和弦与转位（<code>&lt;function&gt;</code>，含上/下标数字）的解析、显示与导出； 导出文件不再有格式违规；补齐隐藏音符（<code>print-object=&quot;no&quot;</code>）、<code>&lt;other-dynamics&gt;</code>、 连音比率的 <code>&lt;normal-type&gt;</code>、开弦记号等写法；<strong>跨小节渐强不再丢失终点</strong></li>
+<li><strong>播放</strong>：修掉「暂停后按继续会从头开始」；换谱后「继续播放」不再接着放旧谱； 播放光标改用<strong>单一时间轴</strong>，经过休止符与同音连线时也按记谱位置推进；速度记号按谱面单位播放与显示</li>
+<li><strong>播放跟随</strong>：iPhone 上翻到非最后一行时，谱面与光标不再上下反复跳动</li>
+<li><strong>符杠</strong>：符杠不再压住符头，也不再出现「第二道符杠没连到符干」；连谱组按 2 个八度跨度上限断开， 符干不再互相交叉</li>
+<li><strong>换行与间距</strong>：一小节一行放不下时改为<strong>在小节内换行</strong>排到下一行（密集小节不再挤成一团）； 相邻音符按<strong>墨迹最小净空</strong>排布，符头不再互相压住；只是轻微超宽的小节仍按压缩处理，不会白占一行</li>
+<li><strong>谱号与拍号让位</strong>：中途换谱号、换拍号都按<strong>实测字形宽</strong>为其留出位置，不再压到音符上； 并修掉真实乐谱里「谱号全乱」的回归</li>
+<li><strong>记号位置</strong>：力度记号与渐强/渐弱楔形线移到谱表下方且跨度完整；八度记号移出谱表、起止对齐； 速度记号的音符时值字形与文字对齐；Segno / Coda 画在小节开头，Fine / To Coda / D.C. / D.S. 画在小节末尾；<strong>渐强/渐弱方向不再写反</strong>；颤音 / 波音 / 回音与重音记号（^）固定在谱表上方</li>
+<li><strong>字形错位</strong>：按官方 SMuFL 名表全量比对后修掉一批<strong>画错的记号</strong>（Segno / D.S. / D.C. 画成了别的记号、 速度记号的音符时值、踏板释放记号、跳音与保持音图标互换、琶音波浪线、低音谱号的 15mb / 8va 等）</li>
+<li><strong>波音与装饰音</strong>：按参照渲染定案字形（<code>&lt;mordent&gt;</code> 带竖线、<code>&lt;inverted-mordent&gt;</code> 不带竖线）， 详情面板的中文标签与字形、说明一致；颤音 / 回音 / 逆回音 / 上·下波音的术语统一</li>
+<li><strong>记谱修正</strong>：多声部小节里某个声部时值不足拍号时，补出的休止符不再丢附点；导入的 MusicXML 若没有时值标记，按实际时值推定（播放判断更准）；<strong>每个声部都填满本小节</strong>（不再「总时长对不上拍号」）； 末小节那条「很长的黑线」查清是多小节休止的横杠画得不成形，已改为规范画法</li>
+<li><strong>MusicXML</strong>：导出文件不再有格式违规（86 处清零，按官方 XSD 逐份校验）；新增<strong>罗马数字和弦与转位</strong> （<code>&lt;function&gt;</code>，含上/下标数字）的解析、显示与导出；补齐隐藏音符（<code>print-object=&quot;no&quot;</code>）、 <code>&lt;other-dynamics&gt;</code>、连音比率的 <code>&lt;normal-type&gt;</code>、开弦记号等写法；<strong>跨小节渐强不再丢失终点</strong>； 语料里纳入一份制谱软件 4.x 导出的乐谱，专门验证新版语法</li>
+<li><strong>练习</strong>：新增<strong>音程训练 / 节奏型训练 / 和弦进行 / 视唱</strong>四类练习；短琶音按八度与方向展开， 改用考级通用的转位滑窗音型（原位 → 第一转位 → 第二转位 …），与长琶音区分开</li>
+<li><strong>反复练习谱</strong>：「反复谱」重做为四份单一主题短谱（反复与结尾 / 小节·拍重复 / D.S.·Coda / D.C.·Fine）， 并修掉 To Coda 首遍误跳</li>
 <li><strong>示例谱</strong>：随包《示例进行曲》补上跳音、重音、保持音、连音线、同音连线、波音、三连音、渐强与延长记号， 打开就能在「音符详情 → 音乐课堂」里逐条看到讲解</li>
-<li><strong>练习</strong>：「反复谱」重做为四份单一主题的短谱（反复与结尾 / 小节·拍重复 / D.S.·Coda / D.C.·Fine）</li>
-<li><strong>术语与文案</strong>：按通行制谱术语统一（「和弦记号」等）；「覆盖谱」取代旧称；快捷指令文案补英文</li>
-<li><strong>安装包</strong>：音色库改为压缩 <code>.sf3</code>（首次启动在本地解码），下载体积从约 134 MB 降到约 13 MB</li>
+<li><strong>简谱</strong>：新增简谱视图（<strong>实验</strong>）</li>
+<li><strong>乐谱库</strong>：打开过的乐谱自动入库，可收藏、重命名、删除；新增<strong>曲目难度评级</strong>（纯本地分析）</li>
+<li><strong>设置页</strong>：新增翻页方式（滑动 / 蓝牙踏板·键盘 / 半页）、Pencil 标注层、蓝牙 MIDI 输出、 链接与致谢；「关于」里可直接查到版号与 build 号</li>
+<li><strong>快捷指令</strong>：支持用快捷指令 / Siri 打开最近乐谱（英文机上不再显示中文）</li>
+<li><strong>改谱更安全</strong>：转调、连谱号等改动加二次确认</li>
+<li><strong>体积与性能</strong>：音色库改为压缩 <code>.sf3</code>（约 13.9 MB，首次启动在本地解码），随包体积大幅下降； 播放设置不再触发全谱重排，音乐会音高与钢琴卷帘加上缓存，光标跟随更省电</li>
+<li><strong>术语与文案</strong>：按通行制谱术语统一（「和弦记号」等）；「覆盖谱」取代旧称；补齐英文文案</li>
 <li>简谱、覆盖谱标注为<strong>实验</strong>功能</li>
-<li>要求 iOS 16.0+，支持 iPhone / iPad</li>
 </ul>
-<h2 id="v1-0">1.0（当前发布版本）</h2>
+<h2 id="v1-0">1.0（生产版本 · build 8）</h2>
 <ul>
 <li>打开即看即听：MusicXML（<code>.xml</code> / <code>.musicxml</code> / <code>.mxl</code>）与制谱软件导出的矢量 PDF</li>
 <li>Bravura 制谱排版：符头、符干、符杠、连音线、装饰音、和弦记号、反复记号与多声部休止符</li>
